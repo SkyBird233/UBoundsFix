@@ -6,19 +6,19 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class UBoundsFix : MonoBehaviour
 {
-    public GameObject model;
+    public GameObject obj;
     public List<SkinnedMeshRendererWithRootBone> skinnedMeshRendererList = new List<SkinnedMeshRendererWithRootBone>();
 
     private void Awake()
     {
-        model = gameObject;
+        obj = gameObject;
         Detect();
     }
 
     public void Detect()
     {
         Debug.Log("Detecting...");
-        if (!model)
+        if (!obj)
             Debug.LogError("No model selected");
 
         var skinnedMeshRenderers = gameObject.GetComponentsInChildren<SkinnedMeshRenderer>();
